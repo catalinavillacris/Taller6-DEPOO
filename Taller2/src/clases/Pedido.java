@@ -7,18 +7,17 @@ import java.util.ArrayList;
 
 public class Pedido {
 	
-	private static int numeroPedidos;
 	private int idPedido;
 	private String nombreCliente;
 	private String direccionCliente;
 	private ArrayList<Producto> itemsPedido;
-
+	private Boolean enCurso;
 
 	public Pedido(String nombre, String direccion) {
 		// TODO Auto-generated constructor stub
 		this.nombreCliente=nombre;
 		this.direccionCliente=direccion;
-		numeroPedidos ++;
+		this.enCurso=true;
 		idPedido ++;	
 	}
 	
@@ -28,6 +27,14 @@ public class Pedido {
 	
 	public void agregarProducto (Producto nuevoItem) {
 		this.itemsPedido.add(nuevoItem);
+	}
+	
+	public void pedidoTerminado() {
+		this.enCurso=false;
+	}
+	
+	public Boolean getEnCurso() {
+		return this.enCurso;
 	}
 	
 	private int getPrecioNetoPedido() {

@@ -15,6 +15,9 @@ public class Combo implements Producto{
 	public void agregarItemACombo(Producto itemCombo) {
 		this.items.add(itemCombo);
 	}
+	public ArrayList<Producto> getItems(){
+		return this.items;
+	}
 	
 	@Override
 	public int getPrecio() {
